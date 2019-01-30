@@ -1,4 +1,4 @@
-/* global $ */
+ /* global $ */
 
 // BELOW Update the songs array with four of your favorites songs.
 var songs = ["Thank u next", "Best Part", "Best News", "Dancing Queen"];
@@ -14,32 +14,49 @@ var songLengths = ["3.27", "3.35", "2.75", "4.00"];
 function displaySongInfo(){
     // BELOW Use forEach Loop to display the data from each of your arrays in the correct div
 songs.forEach(function(song){
-    $("#song").append("<p>" + song + "</p>");
+    $("#songs").append("<p>" + song + "</p>");
 });
 
 images.forEach(function(image){
-    $("#image").append('img src="' + image + '">');
+    $("#images").append('<img src="' + image + '"/>');
 });
 
 links.forEach(function(link){
-    $("#link").append("<p>" + link + "</p>");
+    $("#links").append("<p>" + link + "</p>");
 });
 
 artists.forEach(function(artists){
-    $("#artists").append("<p>" + artist + "</p>");
+    $("#artists").append("<p>" + artists + "</p>");
 });
 
+songLengths.forEach(function(lengths){
+    $("#lengths").append("<p>" + lengths + "</p>");
+});
+}
 function emptySongInfo(){
-    $("#songs").empty();
     // Use jQuery to empty all of the remaining divs
-
-
+$("#songs").empty();
+$("#images").empty();
+$("#links").empty();
+$("#artists").empty();
+$("#lengths").empty();
 }
 
 
 function addSongInfo(){
     // BELOW write the code to add new items to each of the arrays.
+var song = $("#song").val();
+var artist = $("#artist").val();
+var length = $("#length").val();
+var image= $("#image").val();
+var link = $("#link").val();
 
+songs.push(song);
+console.log(songs);
+images.push(image);
+links.push(link);
+artists.push(artist);
+songLengths.push(length);
 
 }
 
@@ -49,4 +66,4 @@ $("#add").click(function() {
     displaySongInfo();
 });
 
-displaySongInfo();
+
